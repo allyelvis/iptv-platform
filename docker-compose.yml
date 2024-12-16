@@ -1,0 +1,6 @@
+version: '3.8'
+services:
+  ffmpeg:
+    image: jrottenberg/ffmpeg
+    command: ["-f", "lavfi", "-i", "testsrc=size=1280x720:rate=30", "-c:v", "libx264", "-f", "flv", "rtmp://localhost/live/test"]
+    restart: always
